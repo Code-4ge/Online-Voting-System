@@ -1,0 +1,3 @@
+tk
+mysql-connector==2.2.9
+Pillow==9.1.0
