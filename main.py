@@ -4,6 +4,7 @@ from tkinter import messagebox
 from tkinter.ttk import Combobox
 from settings import *
 import database as model
+import webbrowser
 
 
 root = Tk()
@@ -300,6 +301,9 @@ def Home():
     btn_border.place(x=100, y=300, width=150, height=50)
     admin_btn = Button(btn_border, text="Admin", font=(ARIAL, 13, "normal"), command=AdminHome, relief=FLAT, border=0, bg="white")
     admin_btn.place(x=1, y=1, width=148, height=48)
+    about = Label(homeFrame, text="💠", font=(LUCIDA_CONSOLE, 18, "normal"), bg="white", fg="grey")
+    about.place(x=860, y=460)
+    about.bind("<Button-1>", open_browser)
     
 
 
@@ -605,6 +609,10 @@ def deleteUser():
 
 def logout():
     Home()
+
+
+def open_browser(e):
+    webbrowser.open_new("https://code-4ge.github.io/")
 
 
 Home()
